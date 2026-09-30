@@ -2,7 +2,6 @@
   config,
   pkgs,
   ...
-  
 }: {
   # Allow unfree
   nixpkgs.config.allowUnfree = true;
@@ -10,6 +9,7 @@
   # Programs enable
   programs.firefox.enable = true;
   programs.steam.enable = true;
+  services.flatpak.enable = true;
 
   # System packages list
   environment.systemPackages = with pkgs; [

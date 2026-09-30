@@ -8,6 +8,13 @@
 
   # Locales
   i18n.defaultLocale = "en_US.UTF-8";
+  
+  # Add languages supported by the system. This is used to generate the locale-archive file.
+  i18n.supportedLocales = [
+    "en_US.UTF-8/UTF-8"
+    "pl_PL.UTF-8/UTF-8"
+  ];
+
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "pl_PL.UTF-8";
     LC_IDENTIFICATION = "pl_PL.UTF-8";
