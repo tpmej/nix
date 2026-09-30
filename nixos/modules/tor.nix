@@ -5,7 +5,7 @@
 }: {
   # Tor service
   services.tor = {
-    enable = true;
+    enable = false;
     settings = {
       ControlPort = 9051;
       ExitNodes = "{ch}";

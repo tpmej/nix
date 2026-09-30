@@ -2,6 +2,7 @@
   config,
   pkgs,
   ...
+  
 }: {
   # Allow unfree
   nixpkgs.config.allowUnfree = true;
@@ -29,6 +30,7 @@
     go
     python3
     vscode
+    nixfmt-rfc-style
 
     # Terminal
     btop
