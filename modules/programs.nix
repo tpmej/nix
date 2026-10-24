@@ -27,5 +27,8 @@
     git
     micro
     tldr
+    
+    # Games.
+    gamescope
   ];
 }
