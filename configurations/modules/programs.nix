@@ -9,10 +9,6 @@
   # Programs enable.
   programs.firefox.enable = true;
   programs.steam.enable = true;
-  programs.nix-crab = {
-    slssteam.enable = true;
-    slssteam-moon.enable = true; # opcjonalnie pod LuaTools
-  };
 
   # System packages list.
   environment.systemPackages = with pkgs; [
