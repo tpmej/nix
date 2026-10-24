@@ -23,6 +23,7 @@
 
     # Terminal.
     btop
+    comma
     fastfetch
     git
     micro
