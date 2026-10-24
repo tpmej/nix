@@ -3,9 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nix-flatpak.url = "github:gabr27/nix-flatpak";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, nix-flatpak, ... }@inputs: {
     nixosConfigurations = {
       
       # Main build.
@@ -14,6 +15,7 @@
         modules = [
           ./hardware-configuration.nix
           ./configurations/main.nix
+          nix-flatpak.nixosModules.nix-flatpak
         ];
       };
     };

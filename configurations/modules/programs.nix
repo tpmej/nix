@@ -9,7 +9,6 @@
   # Programs enable.
   programs.firefox.enable = true;
   programs.steam.enable = true;
-  services.flatpak.enable = true;
 
   # System packages list.
   environment.systemPackages = with pkgs; [
@@ -20,16 +19,30 @@
     obs-studio
     spotify
     vlc
+    
+    # Networking.
+    proton-vpn-gui
 
     # Terminal.
     btop
-    comma
     fastfetch
     git
     micro
     tldr
+    wget
     
     # Games.
     gamescope
   ];
+  
+  # Flatpak
+	services.flatpak.enable = true;
+  
+  # Flatpak packages list.
+  services.flatpak.flatpaks = [
+  		"org.vinegarhq.Sober"
+  ];
+
+  # Auto removing not listed packages.
+  services.flatpak.uninstallUnmanaged = true;
 }
