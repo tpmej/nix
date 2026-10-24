@@ -32,6 +32,7 @@
     wget
     
     # Games.
+    bottles
     gamescope
   ];
   
