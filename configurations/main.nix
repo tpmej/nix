@@ -28,5 +28,4 @@
 
 	# W module Home Manager (instaluje Lumen i wtyczkę LuaTools)
 	programs.nix-crab.luatools.enable = true;
-	programs.nix-crab.cloudredirect.moon.enable = true;
 }
