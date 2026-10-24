@@ -42,6 +42,7 @@
   # Flatpak packages list.
   services.flatpak.packages = [
   		"org.vinegarhq.Sober"
+  		"org.freedownloadmanager.Manager"
   ];
 
   # Auto removing not listed packages.
