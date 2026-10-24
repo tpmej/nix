@@ -39,7 +39,7 @@
 	services.flatpak.enable = true;
   
   # Flatpak packages list.
-  services.flatpak.flatpaks = [
+  services.flatpak.packages = [
   		"org.vinegarhq.Sober"
   ];
 
