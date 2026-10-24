@@ -21,7 +21,7 @@
     vlc
     
     # Networking.
-    proton-vpn-gui
+    proton-vpn
 
     # Terminal.
     btop
