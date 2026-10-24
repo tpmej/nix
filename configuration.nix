@@ -16,6 +16,9 @@
     ./modules/zsh.nix
   ];
   
+  # Enable flakes.
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  
   # System version
   system.stateVersion = "26.05";
 }
