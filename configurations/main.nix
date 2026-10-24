@@ -4,8 +4,6 @@
   ...
 }: {
   imports = [
-    ./hardware-configuration.nix
-
     ./modules/gnome.nix
     ./modules/linux.nix
     ./modules/locale.nix
