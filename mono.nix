@@ -218,6 +218,7 @@
 	(writeShellScriptBin "update" ''
   #!/usr/bin/env bash
   set -euo pipefail
+  sudo -v
   flatpak update -y
   cd /etc/nixos
   nix flake update

@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+REPO="https://github.com/tpmej/nix"
+TARGET="/etc/nixos"
+
+sudo -v
+
+tmp="$(mktemp -d)"
+trap 'rm -rf "$tmp"' EXIT
+
+if command -v git >/dev/null 2>&1; then
+  git clone "$REPO" "$tmp/nix"
+else
+  nix-shell -p git --run "git clone $(printf '%q' "$REPO") $(printf '%q' "$tmp/nix")"
+fi
+
+sudo mkdir -p "$TARGET"
+sudo cp -a "$tmp/nix/." "$TARGET/"
+sudo chown -R root:root "$TARGET"
+
+sudo nixos-generate-config --dir "$TARGET"
+sudo rm -f "$TARGET/configuration.nix"
+
+sudo nixos-rebuild boot --flake "$TARGET#nixos"
+
+echo "Done. Rebooting into the new generation."
+sudo reboot
