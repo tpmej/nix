@@ -210,6 +210,20 @@
     # Games.
     bottles
     gamescope
+    
+    # Update script:
+    (writeShellScriptBin "update" ''
+    #!/usr/bin/env bash
+    set -e
+    flatpak update -y
+    cd /etc/nixos
+    nix flake update
+    git add .
+		git commit -m "update"
+    sudo nixos-rebuild switch --flake .#mono
+    sleep 3
+    sudo reboot
+  		'')
   ];
   
   # Flatpak packages list. 
