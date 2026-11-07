@@ -212,18 +212,23 @@
     gamescope
     
     # Update script:
-    (writeShellScriptBin "update" ''
-    #!/usr/bin/env bash
-    set -e
-    flatpak update -y
-    cd /etc/nixos
-    nix flake update
-    git add .
-		git commit -m "update"
-    sudo nixos-rebuild switch --flake .#mono
-    sleep 3
-    sudo reboot
-  		'')
+	(writeShellScriptBin "update" ''
+  #!/usr/bin/env bash
+  set -euo pipefail
+
+  flatpak update -y
+
+  cd /etc/nixos
+  nix flake update
+
+  sudo git add -A
+  sudo git diff --cached --quiet || sudo git commit -m "update"
+
+  sudo nixos-rebuild switch --flake .#mono
+
+  sleep 3
+  sudo reboot
+	'')
   ];
   
   # Flatpak packages list. 
