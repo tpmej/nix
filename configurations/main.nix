@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ./modules/gnome.nix
+    ./modules/gnome
     ./modules/linux.nix
     ./modules/locale.nix
     ./modules/networking.nix
