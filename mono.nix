@@ -13,6 +13,9 @@
   # Kernel zen & parameters.
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.initrd.kernelModules = [ "amdgpu" ]; # AMD driver load on boot.
+  boot.kernelModules = [ "kvm-amd" ];
+  
+  virtualisation.libvirtd.enable = true;
   
   # System version.
   system.stateVersion = "26.05"; # Leave it alone man.
