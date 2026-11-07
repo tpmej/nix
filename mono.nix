@@ -215,19 +215,12 @@
 	(writeShellScriptBin "update" ''
   #!/usr/bin/env bash
   set -euo pipefail
-
   flatpak update -y
-
   cd /etc/nixos
   nix flake update
-
   sudo git add -A
   sudo git diff --cached --quiet || sudo git commit -m "update"
-
   sudo nixos-rebuild switch --flake .#nixos
-
-  sleep 3
-  sudo reboot
 	'')
   ];
   
