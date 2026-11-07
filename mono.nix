@@ -224,7 +224,7 @@
   sudo git add -A
   sudo git diff --cached --quiet || sudo git commit -m "update"
 
-  sudo nixos-rebuild switch --flake .#mono
+  sudo nixos-rebuild switch --flake .#nixos
 
   sleep 3
   sudo reboot
