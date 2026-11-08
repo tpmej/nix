@@ -192,7 +192,7 @@
   
   		# System packages list.
   		# Coding.
-  		code-cursor
+  		code
   
     # Communication.
     discord
