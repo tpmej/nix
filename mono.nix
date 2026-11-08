@@ -207,6 +207,7 @@
     fastfetch
     git
     micro
+    php
     tldr
     wget
     
