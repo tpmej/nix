@@ -169,7 +169,7 @@
 
   # System packages list.
   environment.systemPackages = with pkgs; [
-  		# GNOME packages.
+  		# GNOME packages list:
   		baobab
     blanket
     collision
@@ -190,7 +190,7 @@
     resources
     snapshot
   
-  		# System packages list.
+  		# System packages list:
   		# Coding.
   		vscode
   
@@ -222,7 +222,7 @@
   sudo -v
   flatpak update -y
   cd /etc/nixos
-  nix flake update
+  sudo nix flake update
   sudo git add -A
   sudo git diff --cached --quiet || sudo git commit -m "update"
   sudo nixos-rebuild switch --flake .#nixos
