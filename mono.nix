@@ -208,7 +208,9 @@
     git
     micro
     php
+    sqlite3
     tldr
+    tree
     wget
     
     # Games.
