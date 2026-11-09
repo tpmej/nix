@@ -208,7 +208,7 @@
     git
     micro
     php
-    sqlite3
+    sqlite
     tldr
     tree
     wget
