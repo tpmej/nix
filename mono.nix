@@ -193,6 +193,7 @@
   		# System packages list:
   		# Coding.
   		vscode
+  		go
   
     # Communication.
     discord
@@ -218,18 +219,18 @@
     gamescope
     
     # Update script:
-	(writeShellScriptBin "update" ''
-  #!/usr/bin/env bash
-  set -euo pipefail
-  sudo -v
-  flatpak update -y
-  cd /etc/nixos
-  sudo nix flake update
-  sudo git add -A
-  sudo git diff --cached --quiet || sudo git commit -m "update"
-  sudo nixos-rebuild switch --flake .#nixos
-	'')
-  ];
+		(writeShellScriptBin "update" ''
+		#!/usr/bin/env bash
+		set -euo pipefail
+		sudo -v
+		flatpak update -y
+		cd /etc/nixos
+		sudo nix flake update
+		sudo git add -A
+		sudo git diff --cached --quiet || sudo git commit -m "update"
+		sudo nixos-rebuild switch --flake .#nixos
+		'')
+		];
   
   # Flatpak packages list. 
 	services.flatpak.enable = true;
