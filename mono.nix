@@ -153,6 +153,11 @@
           show-map = true;
           tab-width = lib.gvariant.mkInt32 2;
         };
+        # Wallpaper.
+        dconf.settings = {
+  					"org/gnome/desktop/background" = {
+    				picture-uri = "file://${./wallpaper.png}";
+  				};
       };
     }
   ];
@@ -215,7 +220,7 @@
     wget
     
     # Games.
-    bottles
+    (bottles.override { removeWarningPopup = true; })
     gamescope
     
     # Update script:
