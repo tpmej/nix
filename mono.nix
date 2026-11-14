@@ -163,13 +163,16 @@
 
   # Packages.
   environment.systemPackages = with pkgs; [
-  		# GNOME packages list:
-  		baobab
+    baobab
     blanket
+    btop
     collision
     dconf-editor
     dialect
+    discord
+    fastfetch
     fragments
+    git
     gnome-boxes
     gnome-calculator
     gnome-calendar
@@ -179,55 +182,31 @@
     gnome-disk-utility
     gnome-logs
     gnome-text-editor
+    go
     keypunch
+    micro
     nautilus
+    obs-studio
+    php
     resources
     snapshot
-  
-  		# System packages list:
-  		# Coding.
-  		vscode
-  		go
-  
-    # Communication.
-    discord
-
-    # Media.
-    obs-studio
     spotify
-    vlc
-
-    # Terminal.
-    btop
-    fastfetch
-    git
-    micro
-    php
     sqlite
     tldr
     tree
+    vlc
+    vscode
     wget
-    
-    # Games.
-    (bottles.override { removeWarningPopup = true; })
-    gamescope
     
 		# Update script:
     (writeShellScriptBin "update" ''
     #!/usr/bin/env bash
     set -euo pipefail
-        
-    flatpak update -y
-        
-    cd /etc/nixos
-        
-    # Flake update i git jako root, ale z zachowaniem sensu
-    sudo nix flake update
-        
-    # Używamy zwykłego gita bez sudo, albo dbamy o ownera
+    flatpak update -y     
+    cd /etc/nixos  
+    sudo nix flake update 
     sudo git add -A
-    sudo git diff --cached --quiet || sudo git commit -m "update"
-        
+    sudo git diff --cached --quiet || sudo git commit -m "update" 
     sudo nixos-rebuild switch --flake .#nixos
     '')
     ];
