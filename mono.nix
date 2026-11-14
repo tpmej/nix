@@ -133,11 +133,11 @@
     gnome-user-docs 
   ];
   
-  # Dconf settings.
+	# Dconf settings.
   programs.dconf.profiles.user.databases = [
     {
       settings = {
-      		# Interface configuration.
+        # Interface configuration.
         "org/gnome/desktop/interface" = {
           color-scheme = "prefer-dark";
           accent-color = "yellow";
@@ -154,11 +154,10 @@
           tab-width = lib.gvariant.mkInt32 2;
         };
         # Wallpaper.
-        dconf.settings = {
-  					"org/gnome/desktop/background" = {
-    				picture-uri = "file://${./wallpaper.png}";
-  					};
-  				};
+        "org/gnome/desktop/background" = {
+          picture-uri = "file://${./wallpaper.png}";
+          picture-uri-dark = "file://${./wallpaper.png}";
+        };
       };
     }
   ];
