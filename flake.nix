@@ -1,5 +1,5 @@
 {
-  description = "Git repo: https://github.com/tpmej/nix";
+  description = "Github repo: https://github.com/tpmej/nix";
 
   inputs = {
   		# Unstable repo.
